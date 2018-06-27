@@ -10,4 +10,10 @@ public class UserRegistrationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
 }
