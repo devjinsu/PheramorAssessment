@@ -1,11 +1,10 @@
 package com.jinsukim.pheramor.model;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class UserRegInfo implements Parcelable {
-
-
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public UserRegInfo createFromParcel(Parcel in) {
             return new UserRegInfo(in);
@@ -19,14 +18,15 @@ public class UserRegInfo implements Parcelable {
     private String mEmail;
     private String mPassword;
     private String mFirstName, mLastName;
-    private int mZipcode;
+    private String mZipcode;
     private int mHeight;
     private boolean mMan;
     private int mAgeMin, mAgeMax;
     private String mRace, mReligion;
+    private String mDOB;
+    private int mInterest;
 
-    public UserRegInfo(String email) {
-        mEmail = email;
+    public UserRegInfo() {
     }
 
     public String getEmail() {
@@ -61,11 +61,11 @@ public class UserRegInfo implements Parcelable {
         mLastName = lastName;
     }
 
-    public int getZipcode() {
+    public String getZipcode() {
         return mZipcode;
     }
 
-    public void setZipcode(int zipcode) {
+    public void setZipcode(String zipcode) {
         mZipcode = zipcode;
     }
 
@@ -117,19 +117,38 @@ public class UserRegInfo implements Parcelable {
         mReligion = religion;
     }
 
+    public String getDOB() {
+        return mDOB;
+    }
+
+    public void setDOB(String DOB) {
+        mDOB = DOB;
+    }
+
+    public int getInterest() {
+        return mInterest;
+    }
+
+    public void setInterest(int interest) {
+        mInterest = interest;
+    }
+
 
     public UserRegInfo(Parcel in){
         this.mEmail = in.readString();
         this.mPassword = in.readString();
         this.mFirstName = in.readString();
         this.mLastName = in.readString();
-        this.mZipcode = in.readInt();
+        this.mZipcode = in.readString();
         this.mHeight = in.readInt();
         this.mMan = in.readByte() != 0;
         this.mAgeMin = in.readInt();
         this.mAgeMax = in.readInt();
         this.mRace = in.readString();
         this.mReligion = in.readString();
+        this.mDOB = in.readString();
+        this.mInterest = in.readInt();
+        //this.mProfile = in.readParcelable(Bitmap.class.getClassLoader());
     }
 
     @Override
@@ -143,13 +162,16 @@ public class UserRegInfo implements Parcelable {
         parcel.writeString(this.mPassword);
         parcel.writeString(this.mFirstName);
         parcel.writeString(this.mLastName);
-        parcel.writeInt(this.mZipcode);
+        parcel.writeString(this.mZipcode);
         parcel.writeInt(this.mHeight);
         parcel.writeByte((byte) (this.mMan ? 1 : 0));
         parcel.writeInt(this.mAgeMin);
         parcel.writeInt(this.mAgeMax);
         parcel.writeString(this.mRace);
         parcel.writeString(this.mReligion);
+        parcel.writeString(this.mDOB);
+        parcel.writeInt(this.mInterest);
+        //parcel.writeValue(this.mProfile);
     }
 
     @Override
@@ -159,13 +181,14 @@ public class UserRegInfo implements Parcelable {
                 ", mPassword='" + mPassword + '\'' +
                 ", mFirstName='" + mFirstName + '\'' +
                 ", mLastName='" + mLastName + '\'' +
-                ", mZipcode=" + mZipcode +
+                ", mZipcode='" + mZipcode + '\'' +
                 ", mHeight=" + mHeight +
                 ", mMan=" + mMan +
                 ", mAgeMin=" + mAgeMin +
                 ", mAgeMax=" + mAgeMax +
                 ", mRace='" + mRace + '\'' +
                 ", mReligion='" + mReligion + '\'' +
+                ", mDOB='" + mDOB + '\'' +
                 '}';
     }
 }

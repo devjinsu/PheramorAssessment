@@ -3,13 +3,14 @@
     <string name="next">Next</string>
     <string name="email">Email</string>
     <string name="type_email">Type your E-mail</string>
-    <string name="password">Password</string>
+    <string name="password">Password (Minimum length: 4)</string>
     <string name="password_confirm">Password Confirm</string>
+    <string name="height_hint">172cm</string>
     <string name="name">Name</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="zipcode">Zip Code</string>
-    <string name="height">Height</string>
+    <string name="height">Height (cm)</string>
     <string name="im">I\'m a</string>
     <string name="man">Man</string>
     <string name="woman">Woman</string>
@@ -19,4 +20,47 @@
     <string name="dobformat">mm/dd/yyyy</string>
     <string name="showme">Show Me</string>
     <string name="age_range">Age Range( 18-60+ )</string>
+    <string name="age_min">Minimum</string>
+    <string name="age_max">Maximum</string>
+    <string name="race">Race</string>
+    <string name="religion">Religion</string>
+    <string name="optional">Optional</string>
+    <string name="other_race">Other: Please specify</string>
+    <string name="select_picture">Select picture</string>
+    <string name="signin">Sign in</string>
+
+
+    <string-array name="race_arrays">
+        <item>Optional</item>
+        <item>African</item>
+        <item>Black/African American</item>
+        <item>Latinx/Hispanic</item>
+        <item>South Asian</item>
+        <item>Middle Eastern/Arab</item>
+        <item>East Asian</item>
+        <item>Native American/Indigenous</item>
+        <item>White/Caucasian</item>
+        <item>Pacific Islander</item>
+        <item>Prefer not to answer</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <string-array name="religion_arrays">
+        <item>Optional</item>
+        <item>Muslim</item>
+        <item>Atheist</item>
+        <item>Agnostic</item>
+        <item>Buddhist</item>
+        <item>Christian</item>
+        <item>Jewish</item>
+        <item>Sikh</item>
+        <item>Hindu</item>
+        <item>bahai</item>
+        <item>spirtual</item>
+        <item>Prefer not to answer</item>
+        <item>Other</item>
+    </string-array>
+    <string name="title_activity_select_profile">SelectProfileActivity</string>
+
 </resources>

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,10 +21,12 @@
             android:text="@string/email" />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/type_email" />
+            android:hint="@string/type_email"
+            android:inputType="textEmailAddress" />
 
     </LinearLayout>
 
@@ -46,14 +48,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/password_confirm" />
+            android:hint="@string/password_confirm"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/et_password_cofirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/password_confirm" />
+            android:hint="@string/password_confirm"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 
@@ -62,8 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,14 +87,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:hint="@string/firstname" />
+                android:hint="@string/firstname"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/et_last"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/lastname" />
+                android:hint="@string/lastname"
+                android:inputType="textPersonName" />
 
 
         </LinearLayout>
@@ -106,8 +112,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/password_confirm" />
-
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +126,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/password_confirm" />
+            android:hint="@string/height_hint"
+            android:inputType="numberDecimal" />
 
     </LinearLayout>
 
@@ -130,8 +137,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -139,21 +146,24 @@
             android:text="@string/im" />
 
         <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
+
             <RadioButton
                 android:id="@+id/man"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/man"/>
+                android:text="@string/man" />
+
             <RadioButton
                 android:id="@+id/woman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="@string/woman"/>
+                android:text="@string/woman" />
         </RadioGroup>
 
 
@@ -163,12 +173,12 @@
             android:layout_marginTop="10dp"
             android:text="@string/dob" />
 
-        <EditText
-            android:id="@+id/et_dob"
+        <Button
+            android:id="@+id/btn_dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/dobformat" />
+            android:text="@string/dobformat" />
 
     </LinearLayout>
 
@@ -177,43 +187,97 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/showme" />
 
-        <CheckBox
+        <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/men"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/men"/>
+                android:text="@string/men" />
+
             <CheckBox
                 android:id="@+id/women"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="@string/women"/>
-        </CheckBox>
+                android:text="@string/women" />
+        </LinearLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="@string/age_range" />
 
-        <Space
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/min_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/age_min"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/max_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:hint="@string/age_max"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_race"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/race" />
+
+        <Spinner
+            android:id="@+id/race"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/religion" />
+
+        <Spinner
+            android:id="@+id/religion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
